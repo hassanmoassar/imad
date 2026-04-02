@@ -20,9 +20,9 @@ export default function Header() {
 
   const menuItems = [
     { href: '/services', label: 'Services' },
-    { href: '#experiences', label: 'Experiences' },
-    { href: '#about', label: 'About' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/#experiences', label: 'Experiences' },
+    { href: '/about', label: 'About' },
+    { href: '/#contact', label: 'Contact' },
   ]
 
   return (
@@ -53,21 +53,20 @@ export default function Header() {
             </motion.div>
           </Link>
 
-          {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-8">
             {menuItems.map((item) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                whileHover={{ color: '#C9A961' }}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  isScrolled
-                    ? 'text-neutral-600 hover:text-neutral-900'
-                    : 'text-white/80 hover:text-white'
-                }`}
-              >
-                {item.label}
-              </motion.a>
+              <Link key={item.href} href={item.href}>
+                <motion.span
+                  whileHover={{ color: '#C9A961' }}
+                  className={`text-sm font-medium transition-colors duration-200 cursor-pointer ${
+                    isScrolled
+                      ? 'text-neutral-600 hover:text-neutral-900'
+                      : 'text-white/80 hover:text-white'
+                  }`}
+                >
+                  {item.label}
+                </motion.span>
+              </Link>
             ))}
           </nav>
 
@@ -109,15 +108,15 @@ export default function Header() {
             >
               <div className="px-4 py-4 space-y-3">
                 {menuItems.map((item) => (
-                  <motion.a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    whileHover={{ x: 4 }}
-                    className="block px-3 py-2 text-sm font-medium text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50 rounded-lg transition-colors"
-                  >
-                    {item.label}
-                  </motion.a>
+                  <Link key={item.href} href={item.href}>
+                    <motion.span
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      whileHover={{ x: 4 }}
+                      className="block px-3 py-2 text-sm font-medium text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50 rounded-lg transition-colors cursor-pointer"
+                    >
+                      {item.label}
+                    </motion.span>
+                  </Link>
                 ))}
                 <motion.button
                   whileHover={{ scale: 1.01 }}
