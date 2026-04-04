@@ -1,42 +1,27 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Trophy, ShieldCheck, Headphones, Star, Users } from 'lucide-react'
 import { containerFade, itemFadeUp } from '@/lib/animations'
 
 const features = [
   {
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    icon: <ShieldCheck className="w-8 h-8" />,
     title: 'No Deposit Required',
     description: "Book with zero upfront cost — pay when you're ready to travel.",
   },
   {
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-    ),
+    icon: <Headphones className="w-8 h-8" />,
     title: '24/7 Support',
     description: 'Round-the-clock customer support in English, French, and Arabic.',
   },
   {
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-      </svg>
-    ),
+    icon: <Star className="w-8 h-8" />,
     title: '4.9 Star Rated',
     description: 'Over 500 verified reviews — travellers consistently rate us excellent.',
   },
   {
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0zM6 20v-2a6 6 0 0112 0v2" />
-      </svg>
-    ),
+    icon: <Users className="w-8 h-8" />,
     title: 'Expert Local Guides',
     description: 'Knowledgeable, licensed local guides passionate about Moroccan culture.',
   },
@@ -58,8 +43,8 @@ export default function Features() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-white/10 text-white/80 rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
-            🏆 Why Choose Us
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white/80 rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
+            <Trophy className="w-4 h-4 text-primary" /> Why Choose Us
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Why Choose Morocco Voyages?

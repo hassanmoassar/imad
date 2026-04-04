@@ -19,7 +19,7 @@ export default function Header() {
   }, [])
 
   const menuItems = [
-    { href: '/services', label: 'Services' },
+    { href: '/programs', label: 'Programs' },
     { href: '/#experiences', label: 'Experiences' },
     { href: '/about', label: 'About' },
     { href: '/#contact', label: 'Contact' },

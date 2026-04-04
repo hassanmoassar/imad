@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Globe, Check, X } from 'lucide-react'
 import { supabase } from '@/lib/supabaseClient'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -28,7 +29,7 @@ function getCategoryLabel(cat: string) {
 }
 
 function getCategoryHref(cat: string) {
-  return `/services/${cat}`
+  return `/programs?category=${cat}`
 }
 
 // Default included/not-included (can be extended with DB fields)
@@ -163,10 +164,13 @@ export default function ProgramDetailPage({ params }: { params: { id: string } }
         <Header />
         <div className="min-h-screen flex items-center justify-center pt-20 px-4">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-red-600 mb-4">Tour Not Found</h1>
+            <div className="mb-6 flex justify-center">
+              <Globe size={64} className="text-neutral-300 animate-pulse" />
+            </div>
+            <h1 className="text-3xl font-bold text-neutral-900 mb-4">Tour Not Found</h1>
             <p className="text-neutral-600 mb-6">{error}</p>
-            <Link href="/services" className="inline-block px-6 py-3 bg-neutral-900 text-white rounded-xl hover:bg-neutral-800 transition-colors">
-              Browse Services
+            <Link href="/programs" className="inline-block px-8 py-3 bg-neutral-900 text-white rounded-xl hover:bg-neutral-800 transition-all font-bold">
+              Browse All Programs
             </Link>
           </div>
         </div>
@@ -219,6 +223,8 @@ export default function ProgramDetailPage({ params }: { params: { id: string } }
             <nav className="flex items-center gap-2 text-sm text-neutral-500">
               <Link href="/" className="hover:text-neutral-900 transition-colors">Home</Link>
               <span>›</span>
+              <Link href="/programs" className="hover:text-neutral-900 transition-colors">Programs</Link>
+              <span>›</span>
               <Link href={getCategoryHref(program.category)} className="hover:text-neutral-900 transition-colors">
                 {getCategoryLabel(program.category)}
               </Link>
@@ -269,9 +275,7 @@ export default function ProgramDetailPage({ params }: { params: { id: string } }
                     {DEFAULT_INCLUDED.map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-neutral-700">
                         <span className="flex-shrink-0 w-5 h-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center mt-0.5">
-                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                          </svg>
+                          <Check className="w-3 h-3" strokeWidth={4} />
                         </span>
                         {item}
                       </li>
@@ -289,9 +293,7 @@ export default function ProgramDetailPage({ params }: { params: { id: string } }
                     {DEFAULT_NOT_INCLUDED.map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-neutral-700">
                         <span className="flex-shrink-0 w-5 h-5 bg-red-100 text-red-500 rounded-full flex items-center justify-center mt-0.5">
-                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
-                          </svg>
+                          <X className="w-3 h-3" strokeWidth={4} />
                         </span>
                         {item}
                       </li>
@@ -543,7 +545,9 @@ export default function ProgramDetailPage({ params }: { params: { id: string } }
                         {tour.image ? (
                           <Image src={tour.image} alt={tour.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                         ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-neutral-700 to-neutral-900 flex items-center justify-center text-5xl">🌍</div>
+                          <div className="w-full h-full bg-gradient-to-br from-neutral-700 to-neutral-900 flex items-center justify-center text-white/20">
+                            <Globe size={48} strokeWidth={1} />
+                          </div>
                         )}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         <div className="absolute bottom-4 left-4 right-4">

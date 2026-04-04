@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { Globe } from 'lucide-react'
 import { supabase } from '@/lib/supabaseClient'
 import { containerFade, itemFadeUp } from '@/lib/animations'
 import { CarIcon, DesertIcon, PalaceIcon } from './Icons'
@@ -102,7 +103,7 @@ function CategorySection({ category }: { category: typeof CATEGORIES[number] }) 
             </div>
           </div>
           <Link
-            href={`/services/${category.key}`}
+            href={`/programs?category=${category.key}`}
             className={`inline-flex items-center gap-2 text-sm font-semibold ${category.accent} hover:underline flex-shrink-0`}
           >
             View all {category.label}
@@ -145,8 +146,8 @@ function CategorySection({ category }: { category: typeof CATEGORIES[number] }) 
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-neutral-700 to-neutral-900 flex items-center justify-center text-5xl">
-                      🌍
+                    <div className="w-full h-full bg-gradient-to-br from-neutral-700 to-neutral-900 flex items-center justify-center text-white/20">
+                      <Globe size={64} strokeWidth={1} />
                     </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { Plane } from 'lucide-react'
 
 export default function CTABanner() {
   return (
@@ -17,8 +18,8 @@ export default function CTABanner() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-semibold uppercase tracking-wide mb-6">
-            ✈️ Start Your Journey
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-semibold uppercase tracking-wide mb-6">
+            <Plane size={16} /> Start Your Journey
           </span>
 
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -30,13 +31,13 @@ export default function CTABanner() {
             Book your dream Moroccan adventure today — from desert excursions to city transfers. No deposit required. Cancel anytime.
           </p>
 
-          <Link href="/services">
+          <Link href="/programs">
             <motion.span
               whileHover={{ scale: 1.06, boxShadow: '0 24px 48px rgba(212, 184, 150, 0.3)' }}
               whileTap={{ scale: 0.97 }}
               className="inline-block px-10 py-4 bg-primary text-white text-lg font-bold rounded-xl hover:bg-primary/90 transition-all duration-300 cursor-pointer"
             >
-              Browse All Services
+              Browse All Programs
             </motion.span>
           </Link>
         </motion.div>

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabaseClient'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Sparkles, Globe } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -90,8 +91,8 @@ export default function ProgramsPage() {
         {/* Page Header */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
-              ✨ Browse
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
+              <Sparkles className="w-4 h-4" /> Browse
             </span>
             <h1 className="text-5xl md:text-6xl font-bold text-neutral-900 mb-6">
               Our Programs
@@ -151,8 +152,8 @@ export default function ProgramsPage() {
                             className="object-cover group-hover:scale-110 transition-transform duration-300"
                           />
                         ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center">
-                            <span className="text-6xl">🌍</span>
+                          <div className="w-full h-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center text-amber-200">
+                            <Globe size={64} strokeWidth={1} />
                           </div>
                         )}
                         {/* Category Badge */}
@@ -187,7 +188,7 @@ export default function ProgramsPage() {
                           <div>
                             <p className="text-xs text-neutral-500 mb-1">Price per person</p>
                             <p className="text-2xl font-bold text-amber-600">
-                              ${program.price_per_person?.toFixed(2) || '0.00'}
+                              {program.price_per_person?.toFixed(0) || '0'} MAD
                             </p>
                           </div>
                           <div className="text-amber-600 group-hover:translate-x-1 transition-transform">

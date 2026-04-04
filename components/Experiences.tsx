@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { Globe } from 'lucide-react'
 import { supabase } from '@/lib/supabaseClient'
 import { containerFade, itemFadeUp } from '@/lib/animations'
 
@@ -57,8 +58,8 @@ export default function Experiences() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
-            🌍 Featured Tours
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
+            <Globe className="w-4 h-4" /> Featured Tours
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
             Featured Excursions
@@ -101,8 +102,8 @@ export default function Experiences() {
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-neutral-700 to-neutral-900 flex items-center justify-center text-6xl">
-                      🌍
+                    <div className="w-full h-full bg-gradient-to-br from-neutral-700 to-neutral-900 flex items-center justify-center text-white/20">
+                      <Globe size={64} strokeWidth={1} />
                     </div>
                   )}
                   {/* Dark overlay gradient */}
@@ -165,7 +166,7 @@ export default function Experiences() {
             viewport={{ once: true }}
             className="mt-16 text-center"
           >
-            <Link href="/services/excursions">
+            <Link href="/programs?category=excursions">
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

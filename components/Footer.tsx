@@ -13,7 +13,7 @@ export default function Footer() {
       links: ['Our Story', 'Team', 'Careers', 'Blog'],
     },
     {
-      title: 'Services',
+      title: 'Programs',
       links: ['Transfers', 'Tours', 'Accommodations', 'Dining'],
     },
     {

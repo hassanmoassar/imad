@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { LayoutDashboard, Ticket, PlusCircle, Calendar, Home } from 'lucide-react'
 import { supabase } from '@/lib/supabaseClient'
 import { getCurrentUser } from '@/lib/supabaseAuth'
 
@@ -58,33 +59,38 @@ export default function AdminSidebar() {
       <nav className="flex-1 p-4 space-y-1">
         <Link
           href="/admin"
-          className="block px-3 py-2.5 rounded hover:bg-neutral-800 transition-colors text-sm"
+          className="flex items-center gap-3 px-3 py-2.5 rounded hover:bg-neutral-800 transition-colors text-sm group"
         >
-          📊 Dashboard
+          <LayoutDashboard size={18} className="text-neutral-500 group-hover:text-amber-500 transition-colors" />
+          Dashboard
         </Link>
         <Link
           href="/admin/programs"
-          className="block px-3 py-2.5 rounded hover:bg-neutral-800 transition-colors text-sm"
+          className="flex items-center gap-3 px-3 py-2.5 rounded hover:bg-neutral-800 transition-colors text-sm group"
         >
-          🎫 Programs
+          <Ticket size={18} className="text-neutral-500 group-hover:text-amber-500 transition-colors" />
+          Programs
         </Link>
         <Link
           href="/admin/programs/create"
-          className="block px-3 py-2.5 rounded hover:bg-neutral-800 transition-colors text-sm"
+          className="flex items-center gap-3 px-3 py-2.5 rounded hover:bg-neutral-800 transition-colors text-sm group"
         >
-          ➕ Add Program
+          <PlusCircle size={18} className="text-neutral-500 group-hover:text-amber-500 transition-colors" />
+          Add Program
         </Link>
         <Link
           href="/admin/reservations"
-          className="block px-3 py-2.5 rounded hover:bg-neutral-800 transition-colors text-sm"
+          className="flex items-center gap-3 px-3 py-2.5 rounded hover:bg-neutral-800 transition-colors text-sm group"
         >
-          📅 Reservations
+          <Calendar size={18} className="text-neutral-500 group-hover:text-amber-500 transition-colors" />
+          Reservations
         </Link>
         <Link
           href="/"
-          className="block px-3 py-2.5 rounded hover:bg-neutral-800 transition-colors text-sm"
+          className="flex items-center gap-3 px-3 py-2.5 rounded hover:bg-neutral-800 transition-colors text-sm group"
         >
-          🏠 Back to Site
+          <Home size={18} className="text-neutral-500 group-hover:text-amber-500 transition-colors" />
+          Back to Site
         </Link>
       </nav>
 

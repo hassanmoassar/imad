@@ -2,13 +2,14 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { CheckCircle2, Clock, Star, ShieldCheck } from 'lucide-react'
 import { containerFade, itemFadeUp } from '@/lib/animations'
 
 const trustBadges = [
-  { icon: '✓', label: 'No Deposit Required' },
-  { icon: '🕐', label: '24/7 Support' },
-  { icon: '⭐', label: '4.9 Rated · 500+ Reviews' },
-  { icon: '🛡️', label: 'Secure Booking' },
+  { icon: CheckCircle2, label: 'No Deposit Required' },
+  { icon: Clock, label: '24/7 Support' },
+  { icon: Star, label: '4.9 Rated · 500+ Reviews' },
+  { icon: ShieldCheck, label: 'Secure Booking' },
 ]
 
 export default function Hero() {
@@ -58,7 +59,7 @@ export default function Hero() {
           variants={itemFadeUp}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
         >
-          <Link href="/services">
+          <Link href="/programs">
             <motion.span
               whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}
               whileTap={{ scale: 0.95 }}
@@ -68,7 +69,7 @@ export default function Hero() {
             </motion.span>
           </Link>
 
-          <Link href="/services/excursions">
+          <Link href="/programs?category=excursions">
             <motion.span
               whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
               whileTap={{ scale: 0.95 }}
@@ -84,16 +85,19 @@ export default function Hero() {
           variants={itemFadeUp}
           className="flex flex-wrap gap-3 justify-center"
         >
-          {trustBadges.map((badge, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-2 px-4 py-2 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full text-white text-sm font-medium"
-            >
-              <span>{badge.icon}</span>
-              <span>{badge.label}</span>
-            </motion.div>
-          ))}
+          {trustBadges.map((badge, i) => {
+            const Icon = badge.icon
+            return (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center gap-2 px-4 py-2 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full text-white text-sm font-medium"
+              >
+                <Icon className="w-4 h-4" />
+                <span>{badge.label}</span>
+              </motion.div>
+            )
+          })}
         </motion.div>
       </motion.div>
 

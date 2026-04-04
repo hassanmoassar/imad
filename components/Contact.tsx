@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { AlertCircle } from 'lucide-react'
 import { LocationIcon, PhoneIcon, EmailIcon, ClockIcon, CheckIcon, LoadingIcon } from './Icons'
 import { containerFade, itemFadeUp } from '@/lib/animations'
 
@@ -202,7 +203,7 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 className="p-4 mb-6 rounded-lg bg-red-50 text-red-700 text-sm flex items-start gap-3"
               >
-                <span className="text-lg mt-0.5">⚠️</span>
+                <AlertCircle size={20} className="flex-shrink-0" />
                 <span>{submitError}</span>
               </motion.div>
             )}

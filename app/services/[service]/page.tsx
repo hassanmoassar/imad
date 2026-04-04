@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabaseClient'
 import Link from 'next/link'
 import Image from 'next/image'
+import { ChevronLeft, Globe } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -73,11 +74,9 @@ export default function ServiceList({ params }: Props) {
       <main className="min-h-screen bg-gradient-to-b from-white to-neutral-50 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <Link href="/services" className="text-amber-600 hover:text-amber-700 font-medium flex items-center gap-2 mb-6">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Back to All Services
+            <Link href="/programs" className="text-amber-600 hover:text-amber-700 font-medium flex items-center gap-2 mb-6 group">
+              <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+              Back to All Programs
             </Link>
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 capitalize">
               {getServiceTitle(service)}
@@ -122,8 +121,8 @@ export default function ServiceList({ params }: Props) {
                           className="object-cover group-hover:scale-110 transition-transform duration-300"
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-4xl">
-                          🌍
+                        <div className="w-full h-full flex items-center justify-center text-neutral-400">
+                          <Globe size={48} strokeWidth={1} />
                         </div>
                       )}
                     </div>
