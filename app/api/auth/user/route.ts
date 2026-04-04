@@ -9,6 +9,8 @@
 
 import { withAuth } from '@/lib/authMiddleware'
 
+export const dynamic = 'force-dynamic'
+
 export const GET = withAuth(async (request, user) => {
   console.debug('[API] GET /api/auth/user', { userId: user.id })
 
