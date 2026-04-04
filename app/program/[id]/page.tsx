@@ -269,7 +269,7 @@ export default function ProgramDetailPage({ params }: { params: { id: string } }
                 <motion.div variants={itemFadeUp}>
                   <h2 className="text-xl font-bold text-neutral-900 mb-5 flex items-center gap-3">
                     <span className="w-1 h-7 bg-green-500 rounded-full inline-block" />
-                    What's Included
+                    What&apos;s Included
                   </h2>
                   <ul className="space-y-3">
                     {DEFAULT_INCLUDED.map((item, i) => (
@@ -287,7 +287,7 @@ export default function ProgramDetailPage({ params }: { params: { id: string } }
                 <motion.div variants={itemFadeUp}>
                   <h2 className="text-xl font-bold text-neutral-900 mb-5 flex items-center gap-3">
                     <span className="w-1 h-7 bg-red-400 rounded-full inline-block" />
-                    What's Not Included
+                    What&apos;s Not Included
                   </h2>
                   <ul className="space-y-3">
                     {DEFAULT_NOT_INCLUDED.map((item, i) => (
@@ -486,7 +486,7 @@ export default function ProgramDetailPage({ params }: { params: { id: string } }
                       <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
-                      Reservation submitted! We'll contact you within 24 hours.
+                      Reservation submitted! We&apos;ll contact you within 24 hours.
                     </div>
                   )}
 

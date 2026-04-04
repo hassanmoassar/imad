@@ -1,0 +1,18 @@
+[0m[0m
+[0m[4mC:\xampp\htdocs\imad-nextjs\app\admin\programs\page.tsx[24m[0m
+[0m  [2m24:6[22m  [33mwarning[39m  React Hook useEffect has a missing dependency: 'load'. Either include it or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4mC:\xampp\htdocs\imad-nextjs\app\layout.tsx[24m[0m
+[0m  [2m19:9[22m  [33mwarning[39m  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  [2m@next/next/no-page-custom-font[22m[0m
+[0m[0m
+[0m[4mC:\xampp\htdocs\imad-nextjs\app\program\[id]\page.tsx[24m[0m
+[0m  [2m272:25[22m  [31merror[39m  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m  [2m290:25[22m  [31merror[39m  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m  [2m489:48[22m  [31merror[39m  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m[0m
+[0m[4mC:\xampp\htdocs\imad-nextjs\components\Contact.tsx[24m[0m
+[0m   [2m86:77[22m  [31merror[39m  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m  [2m220:52[22m  [31merror[39m  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m[0m
+[0m[31m[1m✖ 7 problems (5 errors, 2 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m

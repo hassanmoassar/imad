@@ -83,7 +83,7 @@ export default function Contact() {
             Get In Touch
           </motion.h2>
           <motion.p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Ready to start your Moroccan adventure? Contact us today and let's plan your perfect journey.
+            Ready to start your Moroccan adventure? Contact us today and let&apos;s plan your perfect journey.
           </motion.p>
         </motion.div>
 
@@ -217,7 +217,7 @@ export default function Contact() {
                 className="p-4 mb-6 rounded-lg bg-green-50 text-green-700 text-sm flex items-start gap-3"
               >
                 <CheckIcon />
-                <span>Message sent successfully! We'll get back to you soon.</span>
+                <span>Message sent successfully! We&apos;ll get back to you soon.</span>
               </motion.div>
             )}
 

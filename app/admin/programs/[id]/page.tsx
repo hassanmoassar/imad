@@ -330,7 +330,7 @@ export default function EditProgram() {
               </div>
             ))}
             {steps.length === 0 && (
-              <p className="text-sm text-gray-500 italic">No steps yet. Click "Add Step" to get started.</p>
+              <p className="text-sm text-gray-500 italic">No steps yet. Click &quot;Add Step&quot; to get started.</p>
             )}
           </div>
         </div>
