@@ -10,6 +10,8 @@
 import { supabase } from '@/lib/supabaseClient'
 import { isValidJWTFormat } from '@/lib/supabaseAuth'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: Request) {
   try {
     console.debug('[API] GET /api/auth/session')
