@@ -36,11 +36,11 @@ export default function Hero() {
         variants={containerFade}
         initial="hidden"
         animate="visible"
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white flex flex-col items-center"
+        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white flex flex-col items-center py-12 md:py-20"
       >
         <motion.h1
           variants={itemFadeUp}
-          className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
         >
           Discover Morocco in{' '}
           <span className="text-primary drop-shadow-md">Comfort</span>{' '}
@@ -49,7 +49,7 @@ export default function Hero() {
 
         <motion.p
           variants={itemFadeUp}
-          className="text-lg md:text-xl text-white drop-shadow-md mb-10 max-w-2xl mx-auto leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-white drop-shadow-md mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-4"
         >
           Premium transfers, curated excursions, and unforgettable tour circuits — crafted for the modern explorer.
         </motion.p>
@@ -57,13 +57,13 @@ export default function Hero() {
         {/* CTA Buttons */}
         <motion.div
           variants={itemFadeUp}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-12 sm:mb-16 w-full sm:w-auto px-4"
         >
           <Link href="/programs">
             <motion.span
               whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-3.5 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors cursor-pointer"
+              className="inline-block w-full sm:w-auto px-8 py-3.5 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors cursor-pointer text-center"
             >
               Book Your Ride
             </motion.span>
@@ -73,7 +73,7 @@ export default function Hero() {
             <motion.span
               whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-3.5 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all cursor-pointer"
+              className="inline-block w-full sm:w-auto px-8 py-3.5 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all cursor-pointer text-center"
             >
               Explore Excursions
             </motion.span>
@@ -83,7 +83,7 @@ export default function Hero() {
         {/* Trust Badges */}
         <motion.div
           variants={itemFadeUp}
-          className="flex flex-wrap gap-3 justify-center"
+          className="flex flex-wrap gap-2 sm:gap-3 justify-center px-2"
         >
           {trustBadges.map((badge, i) => {
             const Icon = badge.icon
@@ -91,9 +91,9 @@ export default function Hero() {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-2 px-4 py-2 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full text-white text-sm font-medium"
+                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full text-white text-[10px] sm:text-xs md:text-sm font-medium"
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-3 h-3 sm:w-4 h-4" />
                 <span>{badge.label}</span>
               </motion.div>
             )

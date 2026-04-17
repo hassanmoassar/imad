@@ -8,6 +8,7 @@ import { Globe, Check, X } from 'lucide-react'
 import { supabase } from '@/lib/supabaseClient'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ReviewsSection from '@/components/ReviewsSection'
 import { containerFade, itemFadeUp } from '@/lib/animations'
 
 type Program = {
@@ -518,6 +519,9 @@ export default function ProgramDetailPage({ params }: { params: { id: string } }
               </motion.div>
             </div>
           </div>
+
+          {/* ── Reviews Section ── */}
+          <ReviewsSection programId={params.id} />
 
           {/* ── Related Tours ── */}
           {relatedTours.length > 0 && (

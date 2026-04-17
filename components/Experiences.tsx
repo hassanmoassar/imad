@@ -48,7 +48,7 @@ export default function Experiences() {
   }, [])
 
   return (
-    <section id="experiences" className="py-24 bg-neutral-50">
+    <section id="experiences" className="py-16 sm:py-24 bg-neutral-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -56,15 +56,15 @@ export default function Experiences() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 text-secondary rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wide mb-4">
             <Globe className="w-4 h-4" /> Featured Tours
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 mb-4 px-2">
             Featured Excursions
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto px-4">
             Discover hand-picked tours designed for unforgettable Moroccan memories
           </p>
         </motion.div>
@@ -90,7 +90,7 @@ export default function Experiences() {
                 key={tour.id}
                 variants={itemFadeUp}
                 whileHover={{ y: -8 }}
-                className="relative h-80 rounded-2xl overflow-hidden group cursor-pointer"
+                className="relative h-72 sm:h-80 rounded-2xl overflow-hidden group cursor-pointer"
               >
                 {/* Background image */}
                 <div className="absolute inset-0">

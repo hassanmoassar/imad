@@ -103,28 +103,31 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="md:hidden bg-white border-t border-neutral-200"
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="md:hidden bg-white border-t border-neutral-100 shadow-xl rounded-b-2xl overflow-hidden"
             >
-              <div className="px-4 py-4 space-y-3">
+              <div className="px-6 py-6 space-y-4">
                 {menuItems.map((item) => (
                   <Link key={item.href} href={item.href}>
                     <motion.span
                       onClick={() => setIsMobileMenuOpen(false)}
                       whileHover={{ x: 4 }}
-                      className="block px-3 py-2 text-sm font-medium text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50 rounded-lg transition-colors cursor-pointer"
+                      whileTap={{ scale: 0.98 }}
+                      className="block px-4 py-3 text-base font-semibold text-neutral-800 hover:text-primary hover:bg-neutral-50 rounded-xl transition-all cursor-pointer"
                     >
                       {item.label}
                     </motion.span>
                   </Link>
                 ))}
-                <motion.button
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.99 }}
-                  className="w-full px-4 py-2 mt-4 bg-neutral-900 text-white text-sm font-semibold rounded-lg hover:bg-neutral-800 transition-colors"
-                >
-                  Book Now
-                </motion.button>
+                <div className="pt-4 border-t border-neutral-100">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-4 bg-neutral-900 text-white text-base font-bold rounded-xl hover:bg-neutral-800 transition-all shadow-lg"
+                  >
+                    Book Now
+                  </motion.button>
+                </div>
               </div>
             </motion.div>
           )}

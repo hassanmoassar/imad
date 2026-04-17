@@ -6,6 +6,7 @@ import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import TourSections from '@/components/TourSections'
 import Features from '@/components/Features'
+import Testimonials from '@/components/Testimonials'
 import CTABanner from '@/components/CTABanner'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -38,6 +39,7 @@ export default function Home() {
       <Hero />
       <TourSections />
       <Features />
+      <Testimonials />
       <CTABanner />
       <Contact />
       <Footer />

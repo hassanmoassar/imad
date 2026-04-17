@@ -17,12 +17,14 @@ const pageConfig: Record<string, { title: string; subtitle?: string }> = {
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [isAuthorized, setIsAuthorized] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
 
   const isLoginPage = pathname === '/admin/login'
   const pageInfo = pageConfig[pathname] || { title: 'Admin Panel' }
 
+  // ... (auth check logic stays the same) ...
   useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -71,18 +73,25 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="flex h-screen bg-slate-50">
-      {/* Sidebar */}
-      <AdminSidebar />
+    <div className="flex h-screen bg-slate-50/50 overflow-hidden font-sans">
+      {/* Sidebar - Dark Modern */}
+      <AdminSidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Topbar */}
-        <AdminTopbar title={pageInfo.title} subtitle={pageInfo.subtitle} />
+      {/* Main Content Area */}
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden bg-white md:bg-transparent">
+        {/* Topbar - Glassmorphism */}
+        <AdminTopbar
+          title={pageInfo.title}
+          subtitle={pageInfo.subtitle}
+          onMenuClick={() => setIsSidebarOpen(true)}
+        />
 
-        {/* Page Content */}
-        <main className="flex-1 overflow-auto">
-          <div className="px-8 py-6">
+        {/* Page Content - Improved viewport handling */}
+        <main className="flex-1 overflow-y-auto custom-scrollbar relative z-0">
+          <div className="p-4 sm:p-8 lg:p-10 max-w-[1600px] mx-auto">
             {children}
           </div>
         </main>
